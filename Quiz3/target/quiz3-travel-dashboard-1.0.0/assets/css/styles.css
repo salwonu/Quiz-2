@@ -1,0 +1,65 @@
+/*
+  Custom Branding
+  -----------------------------------
+  Maintained for unique visual identity.
+  Layout, components, and forms are now primarily handled by Bootstrap.
+*/
+
+:root {
+    --ink: #0d1321;
+    --ink-light: #2b2f3a;
+    --sand: #f9f5ef;
+    --accent: #ff5e62;
+    --accent-2: #ffa36c;
+    --sky: #82c7ff;
+    --mint: #20c997;
+    --shadow: 0 20px 45px rgba(13, 19, 33, 0.12);
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa; /* A standard light gray from Bootstrap as a base */
+    /*
+      The complex gradient is beautiful but can be distracting.
+      Commenting out for a cleaner, more standard Bootstrap look.
+      Feel free to re-enable if you prefer the gradient.
+
+      background: radial-gradient(circle at 12% 20%, rgba(255, 163, 108, 0.15), transparent 45%),
+                  radial-gradient(circle at 85% 0%, rgba(130, 199, 255, 0.25), transparent 60%),
+                  linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    */
+    color: var(--ink);
+    min-height: 100vh;
+}
+
+/*
+  Retaining the original brand mark style as it's highly unique.
+  This can be applied to the .navbar-brand element if needed,
+  but Bootstrap's default is cleaner for now.
+*/
+.brand-mark {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff;
+    box-shadow: 0 15px 35px rgba(255, 94, 98, 0.35);
+}
+
+/*
+  Override Bootstrap's default button to add back some of the original branding.
+  This creates a nice blend of Bootstrap's structure and the app's personality.
+*/
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border: none;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 0 10px 25px rgba(255, 94, 98, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 94, 98, 0.3);
+}
