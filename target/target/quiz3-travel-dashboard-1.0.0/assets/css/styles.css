@@ -1,0 +1,223 @@
+:root {
+    --ink: #0d1321;
+    --ink-light: #2b2f3a;
+    --sand: #f9f5ef;
+    --accent: #ff5e62;
+    --accent-2: #ffa36c;
+    --sky: #82c7ff;
+    --mint: #20c997;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --shadow: 0 20px 45px rgba(13, 19, 33, 0.1);
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    color: var(--ink);
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1rem;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 94, 98, 0.35), transparent),
+                radial-gradient(circle at 80% 0%, rgba(130, 199, 255, 0.45), transparent),
+                var(--sand);
+}
+
+.hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    margin-bottom: 1rem;
+    color: var(--ink);
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 0 auto 2rem;
+    font-size: 1.2rem;
+    color: var(--ink-light);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 0 15px 30px rgba(255, 94, 98, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.layout {
+    max-width: 1180px;
+    margin: -5rem auto 4rem;
+    padding: 0 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 94, 98, 0.12), transparent);
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card h3 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.pill {
+    padding: 0.2rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(32, 201, 151, 0.1);
+    color: var(--mint);
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-card {
+    padding: 2rem;
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    border: 1px solid rgba(13, 19, 33, 0.1);
+    border-radius: 16px;
+    padding: 0.8rem 1rem;
+    font: inherit;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.75rem 0.3rem;
+    border-bottom: 1px solid rgba(13, 19, 33, 0.08);
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.ghost-btn {
+    border: none;
+    background: rgba(13, 19, 33, 0.06);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 180ms ease;
+}
+
+.ghost-btn.danger {
+    background: rgba(255, 94, 98, 0.15);
+    color: var(--accent);
+}
+
+.ghost-btn:hover {
+    background: rgba(13, 19, 33, 0.1);
+}
+
+.ghost-btn.danger:hover {
+    background: rgba(255, 94, 98, 0.25);
+}
+
+.chip {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(130, 199, 255, 0.2);
+    color: var(--ink);
+}
+
+.package-price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    color: var(--ink-light);
+}
+
